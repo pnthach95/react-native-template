@@ -51,7 +51,8 @@ const SignInScreen = () => {
   return (
     <ScrollView
       contentContainerStyle={[AppStyles.growCenter, AppStyles.padding]}
-      keyboardShouldPersistTaps="handled">
+      keyboardShouldPersistTaps="handled"
+      showsVerticalScrollIndicator={false}>
       <FastImage resizeMode="center" source={logo} style={styles.image} />
       <Space height={30} />
       <Headline style={[AppStyles.textCenter, AppStyles.textPrimary]}>

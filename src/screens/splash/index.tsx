@@ -11,8 +11,8 @@ import {Colors} from 'utils/themes';
 
 const styles = StyleSheet.create({
   image: {
-    height: responsiveScreenWidth(50),
-    width: responsiveScreenWidth(50),
+    height: responsiveScreenWidth(30),
+    width: responsiveScreenWidth(30),
   },
 });
 
