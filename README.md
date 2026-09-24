@@ -3,7 +3,7 @@
 Tạo project bằng template này
 
 ```shell
-npx @react-native-community/cli init Someapp --template @pnthach95/react-native-template --skip-install
+npx @react-native-community/cli init Someapp --template https://github.com/pnthach95/react-native-template --skip-install
 ```
 
 [Lệnh khác:](https://github.com/react-native-community/cli/blob/main/docs/commands.md#init)
