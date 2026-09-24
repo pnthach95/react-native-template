@@ -1,0 +1,19 @@
+{
+  "name": "@pnthach95/react-native-template",
+  "version": "1.0.0",
+  "description": "react native template",
+  "main": "template.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnthach95/react-native-template"
+  },
+  "workspaces": [
+    "ProjectName"
+  ],
+  "author": {
+    "name": "Pham Ngoc Thach",
+    "email": "thachxyz123@gmail.com"
+  },
+  "packageManager": "yarn@4.13.0",
+  "license": "MIT"
+}

@@ -1,0 +1,30 @@
+{
+  "dark": "Tối",
+  "errors": {
+    "no-password": "Vui lòng nhập mật khẩu",
+    "no-username": "Vui lòng nhập tên người dùng"
+  },
+  "lang": {
+    "en": "English",
+    "vi": "Tiếng Việt"
+  },
+  "language": "Ngôn ngữ",
+  "light": "Sáng",
+  "no-internet": "Không có mạng",
+  "password": "Mật khẩu",
+  "reopen-app": "Mở lại app",
+  "server-error": "Máy chủ lỗi",
+  "session-expired": "Hết phiên đăng nhập",
+  "sign-in": "Đăng nhập",
+  "status": "Trạng thái",
+  "tabs": {
+    "tab1": "Showcase",
+    "tab2": "Form",
+    "tab3": "Cài đặt"
+  },
+  "theme": "Giao diện",
+  "undefined": "không xác định",
+  "unexpected-error": "Đã có lỗi xảy ra",
+  "unknown": "Không biết",
+  "username": "Tên người dùng"
+}

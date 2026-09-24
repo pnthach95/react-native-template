@@ -1,0 +1,30 @@
+{
+  "dark": "Dark",
+  "errors": {
+    "no-password": "Please enter password",
+    "no-username": "Please enter username"
+  },
+  "lang": {
+    "en": "English",
+    "vi": "Tiếng Việt"
+  },
+  "language": "Language",
+  "light": "Light",
+  "no-internet": "No internet",
+  "password": "Password",
+  "reopen-app": "Reopen app",
+  "server-error": "Server error",
+  "session-expired": "Session is expired",
+  "sign-in": "Log in",
+  "status": "Status",
+  "tabs": {
+    "tab1": "Showcase",
+    "tab2": "Form",
+    "tab3": "Setting"
+  },
+  "theme": "Theme",
+  "undefined": "undefined",
+  "unexpected-error": "An unexpected error occurred",
+  "unknown": "Unknown",
+  "username": "Username"
+}

@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+@import 'uniwind';
+
+@import 'heroui-native/styles';
+
+@layer theme {
+  @variant light {
+    --accent: #00d2d3;
+    /*
+      Platform select:
+      https://docs.uniwind.dev/api/platform-select#theme-configuration
+    */
+    /* @variant android {
+      --font-mono: 'CascadiaCode';
+    }
+    @variant ios {
+      --font-mono: 'Cascadia Code';
+    } */
+  }
+
+  @variant dark {
+    --accent: #01a3a4;
+    /*
+      Platform select:
+      https://docs.uniwind.dev/api/platform-select#theme-configuration
+    */
+    /* @variant android {
+      --font-mono: 'CascadiaCode';
+    }
+    @variant ios {
+      --font-mono: 'Cascadia Code';
+    } */
+  }
+}
+
+/*
+  custom colors, fonts:
+  https://heroui.com/en/docs/native/getting-started/theming#adding-custom-colors
+*/
+/* @theme inline {
+  --color-online: var(--online);
+  --font-mono: var(--font-mono);
+} */
