@@ -66,3 +66,32 @@ export const useControlWindowInsets = () => {
   }
   return {left: 0, top: 0};
 };
+
+/**
+ * Kiểm tra width của thiết bị để quyết định render SplitView hay không
+ * {@link} https://developer.android.com/develop/ui/views/layout/use-window-size-classes
+ * {@link} https://developer.apple.com/documentation/swiftui/userinterfacesizeclass
+ * @returns
+ */
+export const useResponsiveSizeClass = (): ResponsiveSizeClassResult => {
+  const {width: widthDp} = useWindowDimensions();
+  let windowSizeClass: WidthSizeClass = 'compact';
+
+  if (Platform.OS === 'ios') {
+    if (Platform.isPad) {
+      windowSizeClass = widthDp >= 600 ? 'medium' : 'compact';
+    }
+  } else {
+    if (widthDp >= 840) {
+      windowSizeClass = 'expanded';
+    } else if (widthDp >= 600) {
+      windowSizeClass = 'medium';
+    }
+  }
+
+  return {
+    windowSizeClass,
+    widthDp,
+    isTwoPane: windowSizeClass !== 'compact',
+  };
+};

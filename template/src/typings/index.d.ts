@@ -10,3 +10,12 @@ type BaseAPIResponse<T = undefined> = {
   data: T;
   msg: string;
 };
+
+type WidthSizeClass = 'compact' | 'medium' | 'expanded';
+
+/** Xem `useResponsiveSizeClass` */
+interface ResponsiveSizeClassResult {
+  windowSizeClass: WidthSizeClass;
+  widthDp: number;
+  isTwoPane: boolean;
+}
