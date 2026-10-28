@@ -1,4 +1,5 @@
 import 'dayjs/locale/vi';
+import {useNetworkActivityDevTools} from '@rozenite/network-activity-plugin';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import duration from 'dayjs/plugin/duration';
@@ -42,6 +43,7 @@ const config: HeroUINativeConfig = {
 };
 
 const App = () => {
+  useNetworkActivityDevTools();
   useZustandDevTools(zustandStores);
   const {left} = useControlWindowInsets();
   const {i18n} = useTranslation(),
