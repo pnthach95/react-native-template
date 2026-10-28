@@ -11,7 +11,7 @@ const SettingsScreen = () => {
   const appTheme = useAppColorScheme();
 
   return (
-    <ListGroup className="m-3">
+    <ListGroup className="m-safe-offset-3">
       <ListGroup.Item onPress={onSwitchTheme}>
         <ListGroup.ItemPrefix>
           <MaterialDesignIcons name="theme-light-dark" />

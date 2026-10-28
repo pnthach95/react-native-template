@@ -7,12 +7,13 @@
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.prettier": "explicit"
   },
   "js/ts.tsdk.path": "node_modules/typescript/lib",
-  "i18n-ally.localesPaths": ["src/locales"],
-  "i18n-ally.keystyle": "nested",
-  "i18n-ally.sortKeys": true,
+  "i18n-ally-next.localesPaths": ["src/locales"],
+  "i18n-ally-next.keystyle": "nested",
+  "i18n-ally-next.sortKeys": true,
   "tailwindCSS.classAttributes": [
     "class",
     "className",

@@ -1,5 +1,5 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {MaterialIcons} from 'components/uniwind';
+import MaterialIcons from '@react-native-vector-icons/material-icons';
+import {createNativeBottomTabNavigator} from '@react-navigation/bottom-tabs/unstable';
 import {useTranslation} from 'react-i18next';
 import FormScreen from 'screens/form';
 import HomeScreen from 'screens/home';
@@ -7,7 +7,12 @@ import SettingsScreen from 'screens/settings';
 import type {MainTabParamList, RootStackScreenProps} from 'typings/navigation';
 
 const iconSize = 24;
-const Tabs = createBottomTabNavigator<MainTabParamList>();
+const tab1Icon = MaterialIcons.getImageSourceSync('home', {size: iconSize});
+const tab2Icon = MaterialIcons.getImageSourceSync('edit-document', {
+  size: iconSize,
+});
+const tab3Icon = MaterialIcons.getImageSourceSync('person', {size: iconSize});
+const Tabs = createNativeBottomTabNavigator<MainTabParamList>();
 
 const MainTab = ({navigation}: RootStackScreenProps<'Main'>) => {
   const {t} = useTranslation();
@@ -24,9 +29,7 @@ const MainTab = ({navigation}: RootStackScreenProps<'Main'>) => {
         name="tab1"
         options={{
           title: t('tabs.tab1'),
-          tabBarIcon: ({color}) => (
-            <MaterialIcons color={color} name="home" size={iconSize} />
-          ),
+          tabBarIcon: {type: 'image', source: tab1Icon},
         }}
       />
       <Tabs.Screen
@@ -39,9 +42,7 @@ const MainTab = ({navigation}: RootStackScreenProps<'Main'>) => {
         name="tab2"
         options={{
           title: t('tabs.tab2'),
-          tabBarIcon: ({color}) => (
-            <MaterialIcons color={color} name="edit-document" size={iconSize} />
-          ),
+          tabBarIcon: {type: 'image', source: tab2Icon},
         }}
       />
       <Tabs.Screen
@@ -54,9 +55,7 @@ const MainTab = ({navigation}: RootStackScreenProps<'Main'>) => {
         name="tab3"
         options={{
           title: t('tabs.tab3'),
-          tabBarIcon: ({color}) => (
-            <MaterialIcons color={color} name="person" size={iconSize} />
-          ),
+          tabBarIcon: {type: 'image', source: tab3Icon},
         }}
       />
     </Tabs.Navigator>

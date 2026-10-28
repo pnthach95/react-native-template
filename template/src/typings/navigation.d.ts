@@ -1,4 +1,4 @@
-import type {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
+import type {NativeBottomTabScreenProps} from '@react-navigation/bottom-tabs/unstable';
 import type {
   CompositeScreenProps,
   NavigatorScreenParams,
@@ -21,7 +21,7 @@ type RootStackScreenProps<T extends keyof RootStackParamList> =
 
 type MainTabScreenProps<T extends keyof MainTabParamList> =
   CompositeScreenProps<
-    BottomTabScreenProps<MainTabParamList, T>,
+    NativeBottomTabScreenProps<MainTabParamList, T>,
     RootStackScreenProps<keyof RootStackParamList>
   >;
 

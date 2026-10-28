@@ -13,7 +13,7 @@
   "exclude": ["**/node_modules", "**/Pods"],
   "compilerOptions": {
     "lib": ["ES2023"],
-    "types": ["bun-types", "jest"],
+    "types": ["bun-types"],
     "paths": {
       "*": ["./src/*"]
     },
