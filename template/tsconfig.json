@@ -6,7 +6,6 @@
     "eslint.config.js",
     "index.js",
     "react-native.config.js",
-    "ReactotronConfig.js",
     "scripts/**/*",
     "src/**/*"
   ],

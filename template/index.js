@@ -14,9 +14,4 @@ LogBox.ignoreLogs([
   'SafeAreaView has been deprecated',
 ]);
 
-if (__DEV__) {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  require('./ReactotronConfig');
-}
-
 AppRegistry.registerComponent(appName, () => App);
