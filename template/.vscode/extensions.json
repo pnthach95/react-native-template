@@ -1,9 +1,8 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "lokalise.i18n-ally",
+    "lydanne.i18n-ally-next",
     "esbenp.prettier-vscode",
-    "bradlc.vscode-tailwindcss",
-    "visualstudioexptteam.vscodeintellicode"
+    "bradlc.vscode-tailwindcss"
   ]
 }

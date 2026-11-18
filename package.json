@@ -1,6 +1,6 @@
 {
   "name": "@pnthach95/react-native-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react native template",
   "main": "template.config.js",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/pnthach95/react-native-template"
   },
   "workspaces": [
-    "ProjectName"
+    "template"
   ],
   "author": {
     "name": "Pham Ngoc Thach",
