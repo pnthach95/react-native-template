@@ -2,8 +2,11 @@
   "servers": {
     "argent": {
       "type": "stdio",
-      "command": "argent",
-      "args": ["mcp"]
+      "command": "node",
+      "args": [
+        "node_modules/@swmansion/argent/dist/cli.js",
+        "mcp"
+      ]
     },
     "heroui-native": {
       "type": "stdio",

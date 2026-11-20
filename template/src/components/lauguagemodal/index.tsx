@@ -1,9 +1,9 @@
 import {MaterialDesignIcons} from 'components/uniwind';
-import {BottomSheet} from 'heroui-native/bottom-sheet';
+import {BottomSheet, type BottomSheetRef} from 'heroui-native/bottom-sheet';
 import {Button} from 'heroui-native/button';
 import {ListGroup} from 'heroui-native/list-group';
 import {Typography} from 'heroui-native/text';
-import {useState} from 'react';
+import {useRef} from 'react';
 import {useTranslation} from 'react-i18next';
 import {View} from 'react-native';
 import {setAppLanguage, useAppLanguage} from 'stores';
@@ -11,34 +11,35 @@ import {setAppLanguage, useAppLanguage} from 'stores';
 const LanguageModal = () => {
   const appLanguage = useAppLanguage();
   const {t} = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
+  const sheetRef = useRef<BottomSheetRef>(null);
 
   const onPressEnglish = () => {
     setAppLanguage('en');
-    setIsOpen(false);
+    sheetRef.current?.dismiss();
   };
   const onPressVietnamese = () => {
     setAppLanguage('vi');
-    setIsOpen(false);
+    sheetRef.current?.dismiss();
+  };
+
+  const onOpen = () => {
+    sheetRef.current?.present();
   };
 
   return (
-    <BottomSheet isOpen={isOpen} onOpenChange={setIsOpen}>
-      <BottomSheet.Trigger asChild>
-        <ListGroup.Item>
-          <ListGroup.ItemPrefix>
-            <MaterialDesignIcons name="earth" />
-          </ListGroup.ItemPrefix>
-          <ListGroup.ItemContent>
-            <Typography>{t('language')}</Typography>
-          </ListGroup.ItemContent>
-          <ListGroup.ItemSuffix>
-            <Typography>{t(`lang.${appLanguage}`)}</Typography>
-          </ListGroup.ItemSuffix>
-        </ListGroup.Item>
-      </BottomSheet.Trigger>
-      <BottomSheet.Portal>
-        <BottomSheet.Overlay className="bg-black/50" />
+    <>
+      <ListGroup.Item onPress={onOpen}>
+        <ListGroup.ItemPrefix>
+          <MaterialDesignIcons name="earth" />
+        </ListGroup.ItemPrefix>
+        <ListGroup.ItemContent>
+          <Typography>{t('language')}</Typography>
+        </ListGroup.ItemContent>
+        <ListGroup.ItemSuffix>
+          <Typography>{t(`lang.${appLanguage}`)}</Typography>
+        </ListGroup.ItemSuffix>
+      </ListGroup.Item>
+      <BottomSheet ref={sheetRef}>
         <BottomSheet.Content>
           <View className="gap-3">
             <BottomSheet.Title>{t('language')}</BottomSheet.Title>
@@ -54,8 +55,8 @@ const LanguageModal = () => {
             </Button>
           </View>
         </BottomSheet.Content>
-      </BottomSheet.Portal>
-    </BottomSheet>
+      </BottomSheet>
+    </>
   );
 };
 

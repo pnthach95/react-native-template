@@ -7,7 +7,7 @@ import {
 } from 'components/uniwind';
 import {Accordion} from 'heroui-native/accordion';
 import {Alert} from 'heroui-native/alert';
-import {BottomSheet} from 'heroui-native/bottom-sheet';
+import {BottomSheet, type BottomSheetRef} from 'heroui-native/bottom-sheet';
 import {Button} from 'heroui-native/button';
 import {Card} from 'heroui-native/card';
 import {Checkbox} from 'heroui-native/checkbox';
@@ -117,7 +117,7 @@ const HomeScreen = () => {
   useScrollToTop(scrollRef);
   const {t} = useTranslation();
   const themeColorDanger = useThemeColor('danger');
-  const [isOpen, setIsOpen] = useState(false);
+  const sheetRef = useRef<BottomSheetRef>(null);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
   const [fields, setFields] = useState({
     newsletter: true,
@@ -163,11 +163,19 @@ const HomeScreen = () => {
 
   const fieldKeys = Object.keys(fields) as Array<keyof typeof fields>;
 
+  const onOpen = () => {
+    sheetRef.current?.present();
+  };
+
+  const onClose = () => {
+    sheetRef.current?.dismiss();
+  };
+
   return (
     <KeyboardAwareScrollView
       ref={scrollRef}
       bottomOffset={30}
-      contentContainerClassName="gap-y-3 p-3">
+      contentContainerClassName="gap-y-3 p-3 px-safe-offset-3">
       <Typography.Code className="m-3 self-center">
         {getBundleId()}
       </Typography.Code>
@@ -229,39 +237,36 @@ const HomeScreen = () => {
         </Alert>
       </View>
       <Typography.Heading type="h3">BottomSheet</Typography.Heading>
-      <BottomSheet isOpen={isOpen} onOpenChange={setIsOpen}>
-        <BottomSheet.Trigger asChild>
-          <Button variant="secondary">Open Bottom Sheet</Button>
-        </BottomSheet.Trigger>
-        <BottomSheet.Portal>
-          <BottomSheet.Overlay />
-          <BottomSheet.Content>
-            <View className="mb-5 items-center">
-              <View className="size-20 items-center justify-center rounded-full bg-green-500/10">
-                <MaterialIcons
-                  className="text-green-500"
-                  name="shield"
-                  size={40}
-                />
-              </View>
+      <Button variant="secondary" onPress={onOpen}>
+        Open Bottom Sheet
+      </Button>
+      <BottomSheet ref={sheetRef}>
+        <BottomSheet.Content>
+          <View className="mb-5 items-center">
+            <View className="size-20 items-center justify-center rounded-full bg-green-500/10">
+              <MaterialIcons
+                className="text-green-500"
+                name="shield"
+                size={40}
+              />
             </View>
-            <View className="mb-8 items-center gap-2">
-              <BottomSheet.Title className="text-center">
-                Keep yourself safe
-              </BottomSheet.Title>
-              <BottomSheet.Description className="text-center">
-                Update your software to the latest version for better security
-                and performance.
-              </BottomSheet.Description>
-            </View>
-            <View className="gap-3">
-              <Button onPress={() => setIsOpen(false)}>Update Now</Button>
-              <Button variant="tertiary" onPress={() => setIsOpen(false)}>
-                Later
-              </Button>
-            </View>
-          </BottomSheet.Content>
-        </BottomSheet.Portal>
+          </View>
+          <View className="mb-8 items-center gap-2">
+            <BottomSheet.Title className="text-center">
+              Keep yourself safe
+            </BottomSheet.Title>
+            <BottomSheet.Description className="text-center">
+              Update your software to the latest version for better security and
+              performance.
+            </BottomSheet.Description>
+          </View>
+          <View className="gap-3">
+            <Button onPress={onClose}>Update Now</Button>
+            <Button variant="tertiary" onPress={onClose}>
+              Later
+            </Button>
+          </View>
+        </BottomSheet.Content>
       </BottomSheet>
       <Typography.Heading type="h3">Button</Typography.Heading>
       <View className="gap-4 p-4">

@@ -3,7 +3,8 @@
     "argent": {
       "type": "local",
       "command": [
-        "argent",
+        "node",
+        "node_modules/@swmansion/argent/dist/cli.js",
         "mcp"
       ],
       "enabled": true
