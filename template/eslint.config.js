@@ -85,6 +85,19 @@ module.exports = defineConfig([
         },
       ],
       'sort-imports': ['error', {ignoreDeclarationSort: true}],
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'react-native',
+              importNames: ['Text'],
+              message:
+                "Use `import {Typography} from 'heroui-native/text'` instead",
+            },
+          ],
+        },
+      ],
     },
   },
   {
