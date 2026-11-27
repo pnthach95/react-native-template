@@ -95,6 +95,12 @@ module.exports = defineConfig([
               message:
                 "Use `import {Typography} from 'heroui-native/text'` instead",
             },
+            {
+              name: 'react-native',
+              importNames: ['TextInput'],
+              message:
+                "Use `import {Input} from 'heroui-native/input'` instead",
+            },
           ],
         },
       ],
